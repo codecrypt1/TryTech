@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/add">
+    <label for="gt">good thing:</label>
+    <input type="text" id="gt" name="goodthing" required><br>
+    <label for="bt">bad thing:</label>
+    <input type="text" id="bt" name="badthing" required><br>
+    <input type="submit" value="ADD">
+</form>
+<h2>My List:</h2>
+<ul>
+{% for key, value in good.items() %}
+{% if value == 1 %}
+    <li>{{ key }}</li>
+    <form action="/delete" method="post">
+        <input hidden name="key" value="{{key}}">
+        <input type="submit" value="delete">
+    </form>
+{% else %}
+    <li>{{ key }} ✅</li>
+    {% endif %}
+{% endfor %}
+</ul>
+
+<h2>Ur List:</h2>
+<ul>
+    {% for key, value in bad.items() %}
+    {% if value == 1 %}
+        <li>{{ key }}</li>
+        <form action="/delete" method="post">
+            <input hidden name="key" value="{{key}}">
+            <input type="submit" value="delete">
+        </form>
+        {% else %}
+    <li>{{ key }} ❌</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+</body>
+</html>

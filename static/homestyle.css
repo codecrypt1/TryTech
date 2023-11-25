@@ -1,0 +1,444 @@
+.html{
+    min-width: 100vw;
+    min-height: 100vw;
+}
+
+body {
+    display: flex;
+    font-family: 'Quicksand';
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 176, 255, .7);
+    min-width: 100vw;
+    transition: all 0.5s;
+}
+
+.dark-mode {
+    background: black;
+    transition: all 0.5s;
+}   
+
+
+#background-wrap {
+    bottom: 0;
+	left: 0;
+	padding-top: 50px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: -10;
+}
+
+/* KEYFRAMES */
+
+@-webkit-keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@-moz-keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+/* ANIMATIONS */
+
+.x1 {
+	-webkit-animation: animateCloud 35s linear infinite;
+	-moz-animation: animateCloud 35s linear infinite;
+	animation: animateCloud 35s linear infinite;
+	
+	-webkit-transform: scale(0.65);
+	-moz-transform: scale(0.65);
+	transform: scale(0.65);
+}
+
+.x2 {
+	-webkit-animation: animateCloud 20s linear infinite;
+	-moz-animation: animateCloud 20s linear infinite;
+	animation: animateCloud 20s linear infinite;
+	
+	-webkit-transform: scale(0.3);
+	-moz-transform: scale(0.3);
+	transform: scale(0.3);
+}
+
+.x3 {
+	-webkit-animation: animateCloud 30s linear infinite;
+	-moz-animation: animateCloud 30s linear infinite;
+	animation: animateCloud 30s linear infinite;
+	
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	transform: scale(0.5);
+}
+
+.x4 {
+	-webkit-animation: animateCloud 18s linear infinite;
+	-moz-animation: animateCloud 18s linear infinite;
+	animation: animateCloud 18s linear infinite;
+	
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+}
+
+.x5 {
+	-webkit-animation: animateCloud 25s linear infinite;
+	-moz-animation: animateCloud 25s linear infinite;
+	animation: animateCloud 25s linear infinite;
+	
+	-webkit-transform: scale(0.55);
+	-moz-transform: scale(0.55);
+	transform: scale(0.55);
+}
+
+/* OBJECTS */
+
+.cloud {
+	background: #fff;
+	background: -moz-linear-gradient(top,  #fff 5%, #f1f1f1 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#fff), color-stop(100%,#f1f1f1));
+	background: -webkit-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: -o-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: -ms-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
+	
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	
+	-webkit-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+
+	height: 120px;
+	position: relative;
+	width: 350px;
+}
+
+.cloud:after, .cloud:before {
+    background: #fff;
+	content: '';
+	position: absolute;
+	z-indeX: -1;
+}
+
+.cloud:after {
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+
+	height: 100px;
+	left: 50px;
+	top: -50px;
+	width: 100px;
+}
+
+.cloud:before {
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+	border-radius: 200px;
+
+	width: 180px;
+	height: 180px;
+	right: 50px;
+	top: -90px;
+}
+
+.full-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.top-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    min-width: match-parent;
+    background-color: transparent;
+    flex-basis: 20%;
+}
+
+.dark button{
+    align-self: flex-end;
+    border-radius: 50px;
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    margin-right: 50px;
+    background-color: yellow;
+    z-index: -22;
+}
+
+.dark button:hover {
+    cursor: pointer;
+}
+
+.dark button:hover {
+    width: 5.1rem;
+    height: 5.1rem;
+    transition: width 0.3s, height 0.3s;
+}
+
+.day{
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.dark-mode .dark button {
+    background-color: white; 
+}
+
+.bottom-container{
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    flex-basis: 80%;
+}
+
+.calendarish{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+    background-color: transparent;
+}
+
+.calendar-container{
+    background-color: whitesmoke;
+    flex-basis: 100%;
+    border-radius: 50px;
+    opacity: 0.75;
+    margin: 15px;
+}
+
+.side{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    background-color: transparent;
+}
+
+.partby2{
+    flex-basis: 50%;
+    justify-content: center;
+    border-radius: 25px;
+    margin: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.6;
+}
+
+.partby2:nth-child(1){
+    border: lightgreen solid 7px;
+}
+
+.partby2:nth-child(2){
+    border: lightcoral solid 7px;
+}
+
+.checkbox ul{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    justify-content: space-evenly;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    flex-basis: 100%;
+    justify-self: center;
+}
+
+.round{
+    align-self: space-evenly;
+    flex-basis: 30%;
+}
+
+.checkbox li{
+    list-style-type: none;
+    margin-left: 15px;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 50px;
+    background-color: white;
+    opacity: 0.8;
+    flex-basis: 90%;
+    height: 2rem;
+    padding-left: 20px;
+}
+
+.submitbutton{
+    border-radius: 50px;
+    background-color: white;
+    opacity: 0.5;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    margin: 5px;
+    margin-right: 10px;
+}
+
+
+/* calendar stuff  */
+#calendar-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    min-height: 80px;
+    background-color: whitesmoke;
+    color: black;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-right: 25px;
+    margin-left: 25px;
+    font-family: 'Anton', sans-serif;
+}
+
+#calendar-header button {
+    background-color: transparent;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#calendar-header button:hover {
+    text-decoration: underline;
+}
+
+#calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+}
+
+.day {
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    text-justify: center;
+    font-size: 16px;
+    min-height: 69px;
+    cursor: pointer;
+    color: gray;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    transition: background-color 0.3s;
+}
+
+.day:hover {
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: auto;
+}
+
+.today {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: #3498db solid 4px;
+}
+
+
+.g0 {
+    background-color: gray;
+    color: white;
+}
+
+.g1 {
+    background-color: #145923;
+    color: #fff;
+}
+.g2 {
+    background-color: #1a732d;
+    color: #fff;
+}
+.g3 {
+    background-color: #26a641;
+    color: #fff;
+}
+.g4 {
+    background-color: #2ecc4f;
+    color: #fff;
+}
+.g5 {
+    background-color: #37f25e;
+    color: #fff;
+}
+
+.day p{
+    font-size: 20px;
+    font-family: 'Anton', sans-serif;
+}
+
+#prev-month {
+    margin-left: 10px;
+    font-family: 'Anton', sans-serif;
+}
+
+#next-month {
+    margin-left: 10px;
+    font-family: 'Anton', sans-serif;
+}
+
+.question{
+    font-family: 'Anton', sans-serif;
+    margin-top: 10px;
+}
+
+.logout{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
